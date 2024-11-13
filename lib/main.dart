@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'app.dart';
 import 'firebase_options.dart'; 
 
-const clientId = 'AIzaSyAH8QxVpqt92miUUZyFMRkg2gHK2gMGlfg';
+const clientId = '137306314236-jghg3vsnd9e7ord24oib81rtbbdde0k0.apps.googleusercontent.com';
 
 void main() async {
  WidgetsFlutterBinding.ensureInitialized();

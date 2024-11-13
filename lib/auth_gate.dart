@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart' hide EmailAuthProvider;
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
+import 'package:firebase_ui_oauth_google/firebase_ui_oauth_google.dart'; // new
 import 'package:flutter/material.dart';
 
 import 'home.dart';
@@ -15,7 +16,8 @@ class AuthGate extends StatelessWidget {
        if (!snapshot.hasData) {
          return SignInScreen(
            providers: [
-              EmailAuthProvider()
+             EmailAuthProvider(),
+             GoogleProvider(clientId: "137306314236-jghg3vsnd9e7ord24oib81rtbbdde0k0.apps.googleusercontent.com"), 
            ],
            headerBuilder: (context, constraints, shrinkOffset) {
              return Padding(
@@ -34,7 +36,6 @@ class AuthGate extends StatelessWidget {
                    : const Text('Welcome to Flutterfire, please sign up!'),
              );
            },
-
            footerBuilder: (context, action) {
              return const Padding(
                padding: EdgeInsets.only(top: 16),
@@ -44,7 +45,6 @@ class AuthGate extends StatelessWidget {
                ),
              );
            },
-
            sideBuilder: (context, shrinkOffset) {
              return Padding(
                padding: const EdgeInsets.all(20),
@@ -54,8 +54,6 @@ class AuthGate extends StatelessWidget {
                ),
              );
            },
-
-           
          );
        }
 
@@ -64,10 +62,3 @@ class AuthGate extends StatelessWidget {
    );
  }
 }
-
-
-typedef HeaderBuilder = Widget Function(
- BuildContext context,
- BoxConstraints constraints,
- double shrinkOffset,
-);
