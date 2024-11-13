@@ -34,6 +34,28 @@ class AuthGate extends StatelessWidget {
                    : const Text('Welcome to Flutterfire, please sign up!'),
              );
            },
+
+           footerBuilder: (context, action) {
+             return const Padding(
+               padding: EdgeInsets.only(top: 16),
+               child: Text(
+                 'By signing in, you agree to our terms and conditions.',
+                 style: TextStyle(color: Colors.grey),
+               ),
+             );
+           },
+
+           sideBuilder: (context, shrinkOffset) {
+             return Padding(
+               padding: const EdgeInsets.all(20),
+               child: AspectRatio(
+                 aspectRatio: 1,
+                 child: Image.asset('flutterfire_300x.png'),
+               ),
+             );
+           },
+
+           
          );
        }
 
